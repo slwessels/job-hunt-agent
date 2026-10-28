@@ -75,7 +75,7 @@ job-hunt/
 
 **A0. Guided setup** (the `setup` parameter)
 
-When the user says `setup` (for example "install the skill from <GitHub URL> and run job-hunt-agent setup"), run this whole guided flow without waiting for more instructions. Use plain-language mode (below).
+When the user says `setup` (for example "install the skill from <GitHub URL> and run job-hunt-agent setup"), run this whole guided flow without waiting for more instructions. Use plain-language mode (above).
 
 1. **Install check.** If this skill came from a GitHub link and is not yet installed, install it when the environment allows (Claude Code: copy `job-hunt-agent/SKILL.md` to `~/.claude/skills/job-hunt-agent/`). If it cannot be installed, say so in one sentence and continue: follow this file for the chat.
 2. **Welcome.** Say in three lines what will happen: CV, questions, scheduled search. State the rule: you fill in forms and prepare documents, the user presses Submit.
