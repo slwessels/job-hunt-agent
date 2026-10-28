@@ -30,7 +30,7 @@ The script copies the skill to `~/.claude/skills/job-hunt-agent/`. Start a new C
 - **Scheduled tasks** for the daily crawl. Without them the agent still works when you ask.
 
 ## 4. Start
-Open a new chat. Paste the text from `SETUP-PROMPT.md`. Attach your CV. Replace the placeholder with your private repo URL.
+Open a new chat. Attach your CV. Send: `Run job-hunt-agent setup.` (or paste `SETUP-PROMPT.md`).
 
 ## 5. Check it worked
 Your private repo should now have `criteria.json`, `ledger.csv`, `history/events.jsonl` and `profile/master-cv.md`. Compare with `examples/job-hunt/`.

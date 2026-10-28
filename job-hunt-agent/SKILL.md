@@ -9,7 +9,7 @@ A repeatable job-search process. It has seven modes. Find the mode from the requ
 
 | Mode | Trigger |
 |---|---|
-| A. Setup | "start a job search", a CV is attached, or no `criteria.json` exists |
+| A. Setup | `/job-hunt-agent setup`, "set up the job hunt agent", "start a job search", a CV is attached, or no `criteria.json` exists |
 | B. Crawl | a scheduled run, or "look for new jobs" |
 | C. Digest | the end of every crawl, or "what did you find?" |
 | D. Review a listing | "review this board/job", "is this legit?" |
@@ -72,6 +72,19 @@ job-hunt/
 ## A. Setup
 
 **Plain-language mode.** Many users are not technical. Use everyday words. Do not say "repo", "cron" or "JSON" without a short explanation. Ask one to three questions at a time. Offer a sensible default for each question and say what it is. Do the technical steps yourself. If the user has no GitHub account, use a folder on their computer or Google Drive instead, and say so in one sentence. At the end, tell the user in plain words what was set up, when the first digest comes, and what to say next.
+
+**A0. Guided setup** (the `setup` parameter)
+
+When the user says `setup` (for example "install the skill from <GitHub URL> and run job-hunt-agent setup"), run this whole guided flow without waiting for more instructions. Use plain-language mode (below).
+
+1. **Install check.** If this skill came from a GitHub link and is not yet installed, install it when the environment allows (Claude Code: copy `job-hunt-agent/SKILL.md` to `~/.claude/skills/job-hunt-agent/`). If it cannot be installed, say so in one sentence and continue: follow this file for the chat.
+2. **Welcome.** Say in three lines what will happen: CV, questions, scheduled search. State the rule: you fill in forms and prepare documents, the user presses Submit.
+3. **CV.** Ask the user to attach the CV (A1, A2).
+4. **Questions.** Run the interview (A3), a few questions at a time, with defaults.
+5. **Storage.** Choose where files live (see Workspace layout). Default: a private GitHub repo if GitHub is connected, otherwise a folder, otherwise Google Drive. Create the structure.
+6. **Schedule.** Create the scheduled task (A4). Default: weekdays at 07:00 in the user's time zone.
+7. **First run.** Run one crawl (A5) and show the digest.
+8. **Wrap-up.** In plain words: what was set up, where the files are, when the next digest arrives, and the phrases the user can say next ("look for new jobs", "review this listing", "apply to <job>", "status", "show my timeline").
 
 **A1. Read the CV.** Read the attached CV (docx, pdf or md). Convert it to `profile/master-cv.md` without changes. Keep the original file.
 

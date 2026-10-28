@@ -16,8 +16,11 @@ A Claude skill that runs a job search from start to finish. It reads your CV, in
 
 ## Quick start
 
-1. Open Claude. Paste the text in `SETUP-PROMPT.md`. Attach your CV.
-2. Answer the questions. Claude installs the skill, builds your private workspace and schedules the daily search.
+1. Open Claude and attach your CV.
+2. Send: `Install the Job Hunt Agent skill from https://github.com/slwessels/job-hunt-agent and run job-hunt-agent setup.`
+3. Answer the questions. The skill's built-in setup flow (A0) installs it, builds your private workspace and schedules the daily search.
+
+The full prompt text is in `SETUP-PROMPT.md`.
 
 Your CV and job data are never stored in this repo. Claude keeps them in a private place that you choose. `INSTALL.md` has manual steps for people who prefer them.
 
