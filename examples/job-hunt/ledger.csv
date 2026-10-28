@@ -1,0 +1,2 @@
+job_id,first_seen,last_seen,title,employer,recruiter,location,mode,salary,url,alt_urls,cluster_id,tier,score,reason,gap,status,legit_flag
+example01,2026-01-05,2026-01-06,Head of Engineering,Example Corp,,Example City,remote,,https://example.com/job/1,,,Strong,82,Title and domain match,Managing 50+ people,submitted,

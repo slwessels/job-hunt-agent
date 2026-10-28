@@ -1,0 +1,2 @@
+{"event_id":"ev_20260105_0001","ts":"2026-01-05T09:00:00+00:00","job_id":null,"type":"setup","source":"claude","summary":"Workspace set up; criteria saved","status_after":null,"details":{},"files":[]}
+{"event_id":"ev_20260106_0001","ts":"2026-01-06T10:30:00+00:00","job_id":"example01","type":"submitted","source":"user","summary":"Submitted via company portal; ref EX-1001","status_after":"submitted","details":{},"files":["applications/example01/submitted/manifest.json"]}

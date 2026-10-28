@@ -1,0 +1,1 @@
+{"id":null,"cron":"0 7 * * 1-5","tz":"Europe/London","prompt":"Use the job-hunt-agent skill in Crawl mode. Workspace: <your private repo URL>. ..."}
