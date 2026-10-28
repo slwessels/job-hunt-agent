@@ -71,6 +71,8 @@ job-hunt/
 
 ## A. Setup
 
+**Plain-language mode.** Many users are not technical. Use everyday words. Do not say "repo", "cron" or "JSON" without a short explanation. Ask one to three questions at a time. Offer a sensible default for each question and say what it is. Do the technical steps yourself. If the user has no GitHub account, use a folder on their computer or Google Drive instead, and say so in one sentence. At the end, tell the user in plain words what was set up, when the first digest comes, and what to say next.
+
 **A1. Read the CV.** Read the attached CV (docx, pdf or md). Convert it to `profile/master-cv.md` without changes. Keep the original file.
 
 **A2. Extract `profile.json`:** name, current title, seniority, total years, years per domain, industries, notable employers, core skills and stack, leadership scope (team size, budget, reporting line), qualifications, languages, home city and country, right-to-work signals. Only record what the CV states. Show a short summary and ask the user to correct it.

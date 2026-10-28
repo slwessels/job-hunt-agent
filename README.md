@@ -16,10 +16,10 @@ A Claude skill that runs a job search from start to finish. It reads your CV, in
 
 ## Quick start
 
-1. Install the skill: see `INSTALL.md`.
-2. Create a **private** Git repo for your own data. Never put your CV in a public repo.
-3. Open Claude and paste `SETUP-PROMPT.md`. Attach your CV.
-4. Answer the interview. Claude creates the workspace, the criteria and the daily crawl.
+1. Open Claude. Paste the text in `SETUP-PROMPT.md`. Attach your CV.
+2. Answer the questions. Claude installs the skill, builds your private workspace and schedules the daily search.
+
+Your CV and job data are never stored in this repo. Claude keeps them in a private place that you choose. `INSTALL.md` has manual steps for people who prefer them.
 
 ## The seven modes
 

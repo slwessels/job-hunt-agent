@@ -1,5 +1,7 @@
 # Install
 
+The easy way: paste `SETUP-PROMPT.md` into Claude. These are the manual steps.
+
 You need: a Claude account, a GitHub account, and a CV (DOCX, PDF or Markdown).
 
 ## 1. Create your private data repo
