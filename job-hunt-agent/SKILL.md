@@ -59,6 +59,7 @@ job-hunt/
     # File names the person sees (sent, shared, uploaded) must carry the employer and role,
     # e.g. "CV - Diebold Nixdorf - Senior Software Delivery Manager.odt", so files for
     # different jobs can be told apart. Give editable .odt first; make the PDF only after approval.
+    # Every cover letter starts with a thank-you line: "Thank you for the opportunity to apply for the <role> role."
     answers.md            # screening-question answers
     submitted/            # frozen copy of exactly what was sent (see E7)
       form-snapshot.json  # every form field label and value, in page order
