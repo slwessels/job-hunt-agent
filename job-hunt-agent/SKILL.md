@@ -54,8 +54,11 @@ job-hunt/
   applications/<job_id>/
     posting.md            # full job description, saved when shortlisted
     gap-analysis.md       # requirement → evidence → matched/partial/missing
-    cv-<job_id>-v<N>.md/.docx   # tailored CV, every version kept
-    cover-letter-v<N>.md
+    cv-<job_id>-v<N>.md/.odt/.pdf   # tailored CV, every version kept
+    cover-letter-v<N>.md/.odt/.pdf
+    # File names the person sees (sent, shared, uploaded) must carry the employer and role,
+    # e.g. "CV - Diebold Nixdorf - Senior Software Delivery Manager.odt", so files for
+    # different jobs can be told apart. Give editable .odt first; make the PDF only after approval.
     answers.md            # screening-question answers
     submitted/            # frozen copy of exactly what was sent (see E7)
       form-snapshot.json  # every form field label and value, in page order
