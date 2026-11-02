@@ -15,12 +15,12 @@ git clone https://github.com/slwessels/job-hunt-agent.git
 cd job-hunt-agent
 ./install.sh
 ```
-The script copies the skill to `~/.claude/skills/job-hunt-agent/`. Start a new Claude Code session afterwards.
+The script copies the skill folder (`SKILL.md` and `scripts/jh.py`) to `~/.claude/skills/job-hunt-agent/`. Run `./install.sh --link` instead to link it, so a `git pull` of this repo updates the skill. Start a new Claude Code session afterwards.
 
 ### Claude.ai or Claude Desktop
 1. Download this repo as a ZIP (Code, then Download ZIP), or run `./install.sh --zip` to make `job-hunt-agent.zip`.
 2. Open Settings, then Capabilities (or Skills). Choose Upload skill.
-3. Upload the ZIP. The ZIP must contain the folder `job-hunt-agent/` with `SKILL.md` inside.
+3. Upload the ZIP. The ZIP must contain the folder `job-hunt-agent/` with `SKILL.md` and `scripts/jh.py` inside.
 4. Switch the skill on.
 
 ## 3. Connect tools (optional but useful)
@@ -36,4 +36,15 @@ Open a new chat. Attach your CV. Send: `Run job-hunt-agent setup.` (or paste `SE
 Your private repo should now have `criteria.json`, `ledger.csv`, `history/events.jsonl` and `profile/master-cv.md`. Compare with `examples/job-hunt/`.
 
 ## Update
-Pull this repo again and run `./install.sh` again.
+Pull this repo again and run `./install.sh` again. With `--link`, a pull is enough.
+
+## Upgrading a workspace made before `jh.py`
+
+Older workspaces have a hand-edited `ledger.csv`. Run this once, then commit:
+
+```bash
+python3 ~/.claude/skills/job-hunt-agent/scripts/jh.py --ws <workspace> migrate
+python3 ~/.claude/skills/job-hunt-agent/scripts/jh.py --ws <workspace> validate
+```
+
+`migrate` appends one `snapshot` event per ledger row, so the ledger can be rebuilt from the event log. It changes no existing line. A status or flag that is not in the allowed list is kept as a note in `reason`. Afterwards, change `watch_companies` entries to objects with `ats` and `board` (see the skill, section A3) to turn on the job-board APIs.

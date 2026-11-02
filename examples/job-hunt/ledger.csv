@@ -1,2 +1,4 @@
 job_id,first_seen,last_seen,title,employer,recruiter,location,mode,salary,url,alt_urls,cluster_id,tier,score,reason,gap,status,legit_flag
-example01,2026-01-05,2026-01-06,Head of Engineering,Example Corp,,Example City,remote,,https://example.com/job/1,,,Strong,82,Title and domain match,Managing 50+ people,submitted,
+96ee0de2,2026-11-02,2026-11-02,Head of Engineering,Example Corp,,Example City,remote,,https://example.com/job/1,https://jobs.example.net/123,,Strong,82,Title and domain match,Managing 50+ people,submitted,
+d11f29ec,2026-11-02,2026-11-02,Director of Technology,Sample Bank,,Example City (Hybrid),hybrid,,https://example.org/careers/42,,,Possible,61,Banking domain; hybrid,Core banking migration,new,date_unverified
+5b4d2688,2026-11-02,2026-11-02,CTO,unknown,Example Recruiters,Example City,,,https://example.net/ad/9,,,Excluded,20,Hard exclude: gambling operator per description,,excluded,conditional

@@ -8,6 +8,14 @@ if [ "${1:-}" = "--zip" ]; then
   exit 0
 fi
 dest="${CLAUDE_SKILLS_DIR:-$HOME/.claude/skills}/job-hunt-agent"
+if [ "${1:-}" = "--link" ]; then
+  # Link instead of copy, so a `git pull` of this repo updates the installed skill.
+  mkdir -p "$(dirname "$dest")"
+  rm -rf "$dest"
+  ln -s "$here/job-hunt-agent" "$dest"
+  echo "Linked $dest to $here/job-hunt-agent. Start a new Claude Code session."
+  exit 0
+fi
 mkdir -p "$dest"
-cp "$here/job-hunt-agent/SKILL.md" "$dest/SKILL.md"
+cp -R "$here/job-hunt-agent/." "$dest/"
 echo "Installed to $dest. Start a new Claude Code session."
