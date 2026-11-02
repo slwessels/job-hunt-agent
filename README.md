@@ -9,6 +9,7 @@ A Claude skill that runs a job search from start to finish. It reads your CV, in
 | Path | Purpose |
 |---|---|
 | `job-hunt-agent/SKILL.md` | The skill. Contains the process only. It holds no personal data. |
+| `job-hunt-agent/scripts/jh.py` | Workspace helper: job IDs, event log, generated ledger, dead-link list, job-board APIs, validation. Python standard library only. |
 | `SETUP-PROMPT.md` | A prompt to paste into Claude. It sets up everything for a new user. |
 | `INSTALL.md` | Step-by-step install for claude.ai, Claude Desktop and Claude Code. |
 | `install.sh` | Installs the skill for Claude Code (`~/.claude/skills`). |
@@ -31,7 +32,9 @@ A Setup, B Crawl, C Digest, D Review a listing, E Apply, F Track, G Timeline. Th
 ## Design choices
 
 - **Skill and data are separate.** The skill is shared. Your data lives in your own private repo.
-- **Append-only history.** `history/events.jsonl` is never edited. Corrections are new events.
+- **Append-only history.** `history/events.jsonl` is never edited. Corrections are new events. `ledger.csv` is generated from it, so the two cannot disagree.
+- **Script for bookkeeping.** `jh.py` computes IDs, writes events and validates the workspace, so a scheduled run cannot drift or list a job twice.
+- **Job boards before web search.** Watched companies are read through their public job-board APIs (Greenhouse, Lever, Ashby, SmartRecruiters, Workable, Workday). URLs found dead are remembered and skipped.
 - **Frozen submissions.** Each application keeps a copy of exactly what you sent, with file hashes.
 - **No invented facts.** A tailored CV only rewords facts from your master CV or facts you confirm.
 
