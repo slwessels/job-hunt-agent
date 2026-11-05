@@ -53,6 +53,8 @@ If Python cannot run (for example on claude.ai), follow the same rules by hand a
 
 ## Workspace layout
 
+A ready-made scaffold for this layout is in `templates/workspace/` (run `init-workspace.sh <folder>` from the skill repo). `docs/WORKSPACE.md` explains it and `docs/PROCESS.md` is the full written process.
+
 All state lives in ONE persistent location, because each scheduled run starts fresh. In setup, ask which location to use:
 - a private Git repo (recommended: the scheduled run clones it, updates it, then commits and pushes), or
 - a folder on the user's computer (the scheduled task must then require that computer), or
@@ -286,3 +288,17 @@ Every mode writes to `history/events.jsonl`: one JSON object per line, append-on
 - A "Yes" to a question such as "worked for us before" can open extra required fields. Ask the user before you answer it.
 - Dropdowns sometimes close without a selection. Take a screenshot, then click the option by its coordinates.
 - Step buttons (for example "Save and Continue") are not the final Submit. Stop at the last review page.
+
+## J. Rules learned in use
+
+These come from running the process on a real search. The long form is `docs/PROCESS.md`.
+
+- **Show candidates before tracking.** After a scan, or when the user supplies a company list, present the candidates first with title, employer, age, a one-line fit, the main gap, and whether each was verified live. Add to the ledger only the roles the user keeps.
+- **Verify on the employer's page.** Aggregator and recruiter-board listings go stale. Check the employer or ATS page. A role that cannot be found live is `expired` with a note, not left `new`.
+- **Tailor to the posting only.** Never carry a point from one application into another. If the posting does not mention a topic, the documents do not either.
+- **Ask before drafting.** The gap analysis ends with an ASK list. Do not draft claims that depend on unanswered questions.
+- **The user's saved file wins.** The user edits the `.odt`. Read the file on disk, back it up, and fix only what was asked. Variants are new files; mark discarded ones in `notes.md`.
+- **Hard-requirement tiers.** Dealbreaker, cap at 55, deduct 5 to 10, ignore. Show the raw and the adjusted score. The tiers live in `criteria.json`.
+- **Record rejections as responses.** Save the reply text, the reference numbers and whether any feedback was given. A role the user drops is `skipped`, never `rejected`.
+- **Record placeholders.** If you entered a guessed value on a form (for example work-history months), say so in `notes.md` so it can be corrected.
+- **Watch lists.** A named company list becomes `watch_companies` in `criteria.json`. Companies the user excludes stay out of the list.

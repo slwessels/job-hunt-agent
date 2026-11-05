@@ -1,0 +1,1 @@
+{"_help":"Per-job inputs for the response-chance model in dashboard/response_model.py. Key = job_id. confidence: low|medium|high (your own gut feel). posting_age_days, applicants: as read from the posting when you applied. channel: easy_apply|company_ats|agency|recruiter_message. All fields optional."}

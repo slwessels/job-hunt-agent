@@ -14,6 +14,10 @@ A Claude skill that runs a job search from start to finish. It reads your CV, in
 | `INSTALL.md` | Step-by-step install for claude.ai, Claude Desktop and Claude Code. |
 | `install.sh` | Installs the skill for Claude Code (`~/.claude/skills`). |
 | `examples/job-hunt/` | Fake sample data that shows the file layout. |
+| `templates/workspace/` | Scaffold for your own private workspace: criteria, ledger, event log, dashboard, document builder, per-workspace skills. |
+| `init-workspace.sh` | Copies the scaffold into a new folder and runs `git init`. |
+| `docs/WORKSPACE.md` | How to create and connect your private workspace repo. |
+| `docs/PROCESS.md` | The working process written down: screening, scoring, preparing, submitting, recording. |
 
 ## Quick start
 
@@ -22,6 +26,8 @@ A Claude skill that runs a job search from start to finish. It reads your CV, in
 3. Answer the questions. The skill's built-in setup flow (A0) installs it, builds your private workspace and schedules the daily search.
 
 The full prompt text is in `SETUP-PROMPT.md`.
+
+Prefer to start from files? Run `./init-workspace.sh ~/my-job-hunt`, connect it to a new private GitHub repo and read `docs/WORKSPACE.md`.
 
 Your CV and job data are never stored in this repo. Claude keeps them in a private place that you choose. `INSTALL.md` has manual steps for people who prefer them.
 
