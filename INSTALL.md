@@ -23,6 +23,9 @@ The script copies the skill folder (`SKILL.md` and `scripts/jh.py`) to `~/.claud
 3. Upload the ZIP. The ZIP must contain the folder `job-hunt-agent/` with `SKILL.md` and `scripts/jh.py` inside.
 4. Switch the skill on.
 
+## 2b. Create the workspace from the template (optional)
+Instead of letting setup build it, run `./init-workspace.sh ~/my-job-hunt`, connect the folder to your private repo and follow `docs/WORKSPACE.md`. The template includes the document builder, the dashboard and two workspace skills.
+
 ## 3. Connect tools (optional but useful)
 - **GitHub access** for the private data repo (so the agent can commit and push).
 - **Claude in Chrome** (browser extension) for reading job pages and filling forms.

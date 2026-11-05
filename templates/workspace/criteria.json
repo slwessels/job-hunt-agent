@@ -1,0 +1,94 @@
+{
+ "titles": [
+  "Head of Engineering",
+  "Director of Technology"
+ ],
+ "min_seniority": "Director",
+ "locations": {
+  "home": "City, Country",
+  "remote": "open",
+  "relocate": false,
+  "countries": [
+   "Country A"
+  ],
+  "notes": ""
+ },
+ "contract": [
+  "permanent"
+ ],
+ "salary_floor": {
+  "amount": 0,
+  "currency": "USD",
+  "period": "year"
+ },
+ "show_no_salary": true,
+ "sectors_preferred": [],
+ "sectors_excluded": [],
+ "sector_note": "Record decisions you have made about sectors (for example state-owned employers) and the date, so they are not re-asked.",
+ "dealbreakers": [
+  "mandatory degree or licence not held",
+  "pay-to-apply",
+  "posting older than 45 days with no evidence it is open",
+  "employer or ATS page shows the role closed, even if a job board still shows Apply"
+ ],
+ "sources": [
+  "Google Jobs",
+  "LinkedIn Jobs",
+  "employer careers pages and ATS boards (Greenhouse, Lever, Ashby, Workable, SmartRecruiters)"
+ ],
+ "watch_companies": [
+  {
+   "name": "Example Corp",
+   "careers_url": "https://example.com/careers",
+   "ats": "greenhouse",
+   "board": "examplecorp"
+  }
+ ],
+ "validation_rules": "Named employer; open on own careers or ATS page; no evidence older than 45 days (mark 'date unverified' if undated); aggregator-only or unnamed-client roles are 'conditional', not counted",
+ "schedule": {
+  "cron": "0 7 * * 1-5",
+  "tz": "Europe/London"
+ },
+ "digest": [
+  "push"
+ ],
+ "hard_requirement_screen": {
+  "rule": "Read the posting's essential requirements against profile/master-cv.md before scoring. Separate what the ad treats as a hard minimum from what it treats as preferred, then grade the gap.",
+  "tiers": [
+   {
+    "level": "dealbreaker",
+    "when": "a mandatory degree, licence or registration the CV does not hold",
+    "effect": "status excluded"
+   },
+   {
+    "level": "cap",
+    "when": "the ad states a hard minimum ('must have', 'required', 'minimum') for years or a named discipline and the CV clearly fails it",
+    "effect": "cap the score at 55; name the gap first in the ledger gap text; no preparation without the user's OK"
+   },
+   {
+    "level": "deduct",
+    "when": "a gap of size or depth rather than kind (a larger team than you have led, a neighbouring sector, one tool missing from a stack)",
+    "effect": "deduct 5 to 10 points and flag it in the gap text; no cap"
+   },
+   {
+    "level": "ignore",
+    "when": "anything the ad calls preferred, advantageous, a bonus or a differentiator",
+    "effect": "no penalty"
+   }
+  ],
+  "always": "Say which tier applies and show the raw rubric score next to any capped or deducted score, so the user can overrule it."
+ },
+ "liveness_check": {
+  "rule": "A role is open only if the employer or ATS page is open, not just the job board.",
+  "linkedin": "Wait about 6 seconds before reading the page; the closed notice appears late. For 'apply on company website' roles, open the employer link and confirm an Apply button and no 'closed' text.",
+  "recheck": "Recheck before preparing a role and again on the day of submission."
+ },
+ "response_flags": [
+  "over 100 applicants: note low odds",
+  "recruiter ad with unnamed client: conditional, flag client unnamed",
+  "posting states an equity or demographic preference: note it in the gap text, do not decide for the user",
+  "employer limits on applications (for example at most 3 roles in 12 months): spend them on the best fits"
+ ],
+ "reapply_rule": "Do not resubmit a role the employer has rejected, or apply twice through two routes, without the user's approval and a materially changed CV or letter.",
+ "updated": "YYYY-MM-DD"
+}

@@ -1,0 +1,1 @@
+{"id":"job-hunt-daily-crawl","cron":"0 7 * * 1-5","tz":"Europe/London","runs_on":"describe where the scheduled task runs (cloud, or your computer via Claude desktop)","remote":"git@github.com:YOU/my-job-hunt.git","created":"YYYY-MM-DD"}

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Rebuild the dashboard and include it in the commit. A build failure must not block a commit.
+python3 dashboard/build.py >/dev/null 2>&1 && git add dashboard/index.html || echo "pre-commit: dashboard build failed, committing without it" >&2
+exit 0
